@@ -4,6 +4,11 @@ var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 
 var TodoApp = require('TodoApp');
 
+var action = require('action');
+var store = require('configureStore').configure();
+
+store.dispatch();
+
 $(document).foundation();
 
 //App css
