@@ -1,10 +1,10 @@
 var React = require('react');
-var Search = require('Search');
 var TodoAPI = require('TodoAPI');
 var uuid = require('node-uuid');
 
 import TodoList from 'TodoList';
 import AddTodo from 'AddTodo';
+import Search from 'Search';
 
 var moment = require('moment');
 
