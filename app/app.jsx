@@ -8,11 +8,21 @@ var TodoApp = require('TodoApp');
 var actions = require('actions');
 var reducers = require('reducers');
 var store = require('configureStore').configure();
+var TodoAPI = require('TodoAPI');
 
-$(document).foundation()
+store.subscribe(() => {
+  var state= store.getState();
+  console.log('New State',state);
+  TodoAPI.setTodos(state.todos);
+});
 
-store.dispatch(actions.addTodo('Clean the yard'));
-//App css
+var intialTodos = TodoAPI.getTodos();
+store.dispatch(actions.addTodos(intialTodos));
+
+
+$(document).foundation();
+
+
 require('style!css!sass!applicationStyles')
 
 ReactDOM.render(
