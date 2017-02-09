@@ -10,17 +10,7 @@ var reducers = require('reducers');
 var store = require('configureStore').configure();
 var TodoAPI = require('TodoAPI');
 
-
-
-store.subscribe(() => {
-  var state= store.getState();
-  console.log('New State',state);
-  TodoAPI.setTodos(state.todos);
-});
-
-var intialTodos = TodoAPI.getTodos();
-store.dispatch(actions.addTodos(intialTodos));
-
+store.dispatch(actions.startAddTodos());
 
 $(document).foundation();
 
